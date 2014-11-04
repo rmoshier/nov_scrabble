@@ -8,7 +8,11 @@ describe Scrabble do
     end
 
     it "returns total score value for a given word" do
-      expect(Scrabble.score("cat")).to eq 5 
+      expect(Scrabble.score("cat")).to eq 5
+    end
+
+    it "returns an integer" do
+      expect(Scrabble.score("cat")).to be_a Fixnum
     end
   end
 
