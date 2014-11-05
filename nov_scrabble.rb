@@ -32,17 +32,10 @@ class Scrabble
   def self.score(word)
     score = 0
     word.upcase.chars.each { |letter| score += SCORE_HASH[letter] }
-    score
+    return score
   end
 
+  def self.highest_score_from(array_of_words)
+    array_of_words.max_by { |word| score(word) }
+  end
 end
-
-# self.highest_score_from(array_of_words) returns the word in the array with the
-  # highest score.
-  
-  # Note that it’s better to use fewer tiles, so if the top score is tied between
-    # multiple words, pick the one with the fewest letters.
-  # But there is a bonus for using all seven letters. If one of the highest scores
-    # uses all seven letters, pick that one
-  # But if the there are multiple words that are the same score and same length,
-    # pick the first one in supplied list`
